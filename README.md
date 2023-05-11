@@ -1,6 +1,6 @@
 # Verse Commons
 
-> Common functionality that Verse is currently missing
+> Common functionality that Verse is currently missing or frequently requested
 
 ## Using These Files
 
