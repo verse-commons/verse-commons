@@ -77,7 +77,7 @@ Array<public> := module:
     (Input:[]int).SortInts<public>(SortOrder : Sort.orderBy)<transacts> : []int = 
         return Input.Sort(SortOrder, Array.Sort.CompareInts)
 
-    # Makes an `array` of ints sorted in order of the `SortOrder` enum
+    # Makes an `array` of floats sorted in order of the `SortOrder` enum
     (Input:[]float).SortFloats<public>(SortOrder : Sort.orderBy)<transacts> : []float = 
         return Input.Sort(SortOrder, Array.Sort.CompareFloats)
 
@@ -96,12 +96,12 @@ Array<public> := module:
             Input 
 
     # Returns the item that is the largest by the `Comparer` function
-    # Fails if `arary` is empty
+    # Fails if `array` is empty
     (Input:[]t where t:type).MaxBy<public>(Comparer: type{_(:t, :t)<transacts> : int})<transacts><decides> : t = 
         Input.Sort(Sort.orderBy.Desc, Comparer)[0]
     
     # Returns the item that is the smallest by the `Comparer` function
-    # Fails if `arary` is empty
+    # Fails if `array` is empty
     (Input:[]t where t:type).MinBy<public>(Comparer: type{_(:t, :t)<transacts> : int})<transacts><decides> : t = 
         Input.Sort(Sort.orderBy.Asc, Comparer)[0]
 
